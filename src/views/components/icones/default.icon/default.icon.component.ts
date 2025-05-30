@@ -11,15 +11,14 @@ import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 
 export class DefaultIconComponent {
     safeSvg: SafeHtml = '';
-    teste: string = '';
 
     constructor(private sanitizer: DomSanitizer) { }
 
     private _props!: DefaultIconComponentProps;
 
     @Input() set props(value: DefaultIconComponentProps) {
+        console.log(this._props)
         this._props = value;
-        this.teste = this._props.fill;
         this.safeSvg = this.sanitizer.bypassSecurityTrustHtml(value.content);
     }
 
