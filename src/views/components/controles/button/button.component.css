@@ -1,0 +1,33 @@
+.btn-default {
+    background: #FFF;
+    border-style: none;
+    padding: 8px;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #e0b219;
+    border-style: none;
+    border: 1px solid;
+    border-radius: 16px;
+    padding: 8px;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: 600;
+}

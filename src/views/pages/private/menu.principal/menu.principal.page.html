@@ -1,0 +1,29 @@
+<div class="root">
+  <div class="itens">
+    <div class="logoComponent">
+      <img 
+        class="logo" 
+        src="assets/images/LA_GG.png" 
+        alt="Logo no menu" 
+      />
+      <div class="divider"></div>
+    </div>
+    <div class="containerItems">
+      <ng-container *ngFor="let item of menuItems">
+        <menu-item-component 
+          [props]="{ model: item, sigTipo: enumMenu }"
+        >
+        </menu-item-component>
+      </ng-container>
+    </div>
+    <div class="containerSair">
+      <div class="divider"></div>
+      <ng-container *ngFor="let item of menuItemSair">
+        <menu-item-component 
+          [props]="{ model: item, sigTipo: enumMenu }"
+        >
+        </menu-item-component>
+      </ng-container>
+    </div>
+  </div>
+</div>

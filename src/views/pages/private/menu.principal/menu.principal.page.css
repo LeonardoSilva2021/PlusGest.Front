@@ -1,0 +1,44 @@
+.root{
+    display: flex;
+    height: 100%;
+    width: 250px;
+    background: #FFF;
+}
+
+.itens {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 8px;
+    gap: 16px;
+}
+
+.logoComponent {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.logo {
+    height: 80px;
+    width: 100%;
+}
+
+.divider {
+    height: 1px;
+    background: #F0F0F0;
+    width: 100%;
+}
+
+.containerItems {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.containerSair {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}

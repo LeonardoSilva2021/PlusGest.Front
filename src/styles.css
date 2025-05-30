@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    padding: 0;
+    background: #F0F0F0;
+}

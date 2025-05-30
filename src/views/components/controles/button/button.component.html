@@ -1,0 +1,6 @@
+<button 
+    [ngClass]="['btn-' + props.variant]"
+    (click)="props.onClick()"
+>
+    <ng-content></ng-content>
+</button>
