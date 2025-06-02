@@ -1,7 +1,12 @@
 export enum EnumMenuPrincipal {
-    CLIENTE = 0,
 
-    PERFIL = 50,
+
+    SIMULADOR = 1,
+    CONTRATOS = 2,
+
+    CLIENTE = 20,
+    
+    CONFIGURACOES = 50,
 
     SAIR = 99
 }

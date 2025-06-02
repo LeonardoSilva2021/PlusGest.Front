@@ -1,29 +1,23 @@
-<div class="root">
-  <div class="itens">
-    <div class="logoComponent">
-      <img 
-        class="logo" 
-        src="assets/images/LA_GG.png" 
-        alt="Logo no menu" 
-      />
-      <div class="divider"></div>
+<card-component [props]="{ classname: 'card-root' }">
+    <div class="containerHeader">
+        <div class="containerAvatarInfo">
+            <p-avatar label="L" size="xlarge" shape="circle" class="avatar" />
+            <div class="containerInformaion">
+                <p> Leonardo </p>
+                <p> Administrador </p>
+            </div>
+        </div>
+        <p-divider />
     </div>
-    <div class="containerItems">
-      <ng-container *ngFor="let item of menuItems">
-        <menu-item-component 
-          [props]="{ model: item, sigTipo: enumMenu }"
-        >
-        </menu-item-component>
-      </ng-container>
+    <div>
+        @for (categoria of menuCategoria; track categoria.tipo) {
+        <p> {{ categoria.nome }} </p>
+        <p-divider />
+        <div>
+            @for (item of menuItems; track item.tipo) {
+                <menu-item-component [props]=" { model: item, sigTipo: enumMenu }"></menu-item-component>
+            }
+        </div>
+        }
     </div>
-    <div class="containerSair">
-      <div class="divider"></div>
-      <ng-container *ngFor="let item of menuItemSair">
-        <menu-item-component 
-          [props]="{ model: item, sigTipo: enumMenu }"
-        >
-        </menu-item-component>
-      </ng-container>
-    </div>
-  </div>
-</div>
+</card-component>

@@ -1,6 +1,10 @@
 <div>
     <button-component [props]="botaoProps">
-        <add-user-icon [props]="addUserIcon"></add-user-icon>
+        <div [ngSwitch]="props.model.tipo">
+            <person-icon-text-component *ngSwitchCase="enumMenu.CLIENTE" [props]="personTextIcon"></person-icon-text-component> 
+            <add-user-icon *ngSwitchCase="enumMenu.CONTRATOS" [props]="addUserIcon"></add-user-icon>
+            <add-user-icon *ngSwitchCase="enumMenu.SAIR" [props]="addUserIcon"></add-user-icon>
+        </div> 
         {{ props.model.titulo }}
     </button-component>
 </div>
