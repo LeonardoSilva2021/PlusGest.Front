@@ -1,23 +1,80 @@
 <card-component [props]="{ classname: 'card-root' }">
     <div class="containerHeader">
         <div class="containerAvatarInfo">
-            <p-avatar label="L" size="xlarge" shape="circle" class="avatar" />
+            <p-avatar
+                [label]="
+                    usuario.fotoUrl ? 
+                        '' : 
+                        usuario.nome.charAt(0)
+                "
+                size="xlarge"
+                shape="circle"
+                class="avatar" 
+            />
             <div class="containerInformaion">
-                <p> Leonardo </p>
-                <p> Administrador </p>
+                <typography-component [props]="{
+                        variant: 'caption'
+                    }"
+                >
+                    Nome:
+                </typography-component>
+                <typography-component [props]="{
+                        variant: 'primary',
+                    }"
+                >
+                    {{ usuario.nome }}
+                </typography-component>
+                <typography-component [props]="{
+                        variant: 'caption'
+                    }"
+                >
+                    Departamento:
+                </typography-component>
+                <typography-component [props]="{
+                        variant: 'primary'
+                    }"
+                >
+                    {{ switchDepartamentoNome() }}
+                </typography-component>
             </div>
         </div>
         <p-divider />
     </div>
     <div>
-        @for (categoria of menuCategoria; track categoria.tipo) {
-        <p> {{ categoria.nome }} </p>
+        @for (item of menuItemDashboard; track item.tipo) {
+            <menu-item-component
+                [props]="{ 
+                    model: item, 
+                    sigTipo: enumMenu 
+                }"
+            >
+            </menu-item-component>
+        }
         <p-divider />
+    </div>
+    <div class="containerCategories">
+        @for (item of menuItems; track item.tipo) {
+            <menu-item-component
+                [props]="{
+                    model: item,
+                    sigTipo: enumMenu,
+                }"
+            >
+            </menu-item-component>
+        }
+    </div>
+    <div>
         <div>
-            @for (item of menuItems; track item.tipo) {
-                <menu-item-component [props]=" { model: item, sigTipo: enumMenu }"></menu-item-component>
+            @for (item of menuItemSair; track item.tipo) {
+                <p-divider />
+                <menu-item-component
+                    [props]="{
+                        model: item, 
+                        sigTipo: enumMenu,
+                    }"
+                >
+                </menu-item-component>
             }
         </div>
-        }
     </div>
 </card-component>

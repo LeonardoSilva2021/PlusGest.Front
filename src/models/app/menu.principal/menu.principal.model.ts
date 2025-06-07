@@ -1,11 +1,11 @@
-import { EnumCategoriaMenuPrincipal } from "../../enuns/app/menu.principal/enum.categoria.menu.principal";
-import { EnumMenuPrincipal } from "../../enuns/app/menu.principal/enum.menu.principal";
+import { UsuarioDepartamentoEnum } from "../../enuns/api/usuario/usuario.departamento.enum";
+import { MenuPrincipalEnum } from "../../enuns/app/menu.principal/menu.principal.enum";
 
 export class MenuPrincipalModel {
     constructor (
         public titulo: string = '',
-        public path: string = '',
-        public categoria: EnumCategoriaMenuPrincipal = EnumCategoriaMenuPrincipal.RECEPCAO,
-        public tipo: EnumMenuPrincipal = EnumMenuPrincipal.CLIENTE,
+        public rota: string = '',
+        public tipo: MenuPrincipalEnum = MenuPrincipalEnum.CLIENTE,
+        public departamento: UsuarioDepartamentoEnum = UsuarioDepartamentoEnum.RECEPCAO,
     ) {}
 }

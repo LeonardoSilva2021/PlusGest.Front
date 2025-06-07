@@ -1,0 +1,23 @@
+::ng-deep .p-accordion {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: black;
+}
+
+::ng-deep .p-accordionpanel {
+    border-style: none !important;
+    border-width: 0px !important;
+    border-color: none !important;
+}
+
+::ng-deep .p-accordionheader {
+    padding: 8px !important;
+}
+
+.containerHeader {
+    display: flex ;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    flex-direction: row;
+    align-items: center;
+}

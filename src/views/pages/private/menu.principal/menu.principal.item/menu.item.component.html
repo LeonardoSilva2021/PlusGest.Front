@@ -1,10 +1,39 @@
 <div>
     <button-component [props]="botaoProps">
         <div [ngSwitch]="props.model.tipo">
-            <person-icon-text-component *ngSwitchCase="enumMenu.CLIENTE" [props]="personTextIcon"></person-icon-text-component> 
-            <add-user-icon *ngSwitchCase="enumMenu.CONTRATOS" [props]="addUserIcon"></add-user-icon>
-            <add-user-icon *ngSwitchCase="enumMenu.SAIR" [props]="addUserIcon"></add-user-icon>
-        </div> 
+
+            <!-- DASHBOARD -->
+            <dashboard-icon-component
+                *ngSwitchCase="enumMenu.DASHBOARD"
+                [props]="addUserIcon">
+            </dashboard-icon-component>
+
+            <!-- RECPÇÃO -->
+            <person-icon-text-component
+                *ngSwitchCase="enumMenu.CLIENTE"
+                [props]="personTextIcon">
+            </person-icon-text-component>
+            <document-icon-component
+                *ngSwitchCase="enumMenu.DOCUMENTOS"
+                [props]="personTextIcon">
+            </document-icon-component>
+
+            <!-- COMERCIAL --> 
+            <person-icon-text-component
+                *ngSwitchCase="enumMenu.SIMULADOR"
+                [props]="personTextIcon">
+            </person-icon-text-component>
+            <person-icon-text-component
+                *ngSwitchCase="enumMenu.CONTRATOS"
+                [props]="personTextIcon">
+            </person-icon-text-component>
+
+            <!-- SAIR -->
+            <exit-icon-component
+                *ngSwitchCase="enumMenu.SAIR"
+                [props]="exitIcon">
+            </exit-icon-component>
+        </div>
         {{ props.model.titulo }}
     </button-component>
 </div>

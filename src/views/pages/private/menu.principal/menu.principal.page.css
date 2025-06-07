@@ -1,50 +1,60 @@
-::ng-deep .card-root{
+::ng-deep .card-root {
     display: flex;
     height: 100%;
     width: 250px;
     background: #FFF;
     padding: 8px;
-    border-radius: 0px !important;
+    border-radius: 0px 16px 16px 0px !important;
+}
+
+::ng-deep p {
+    font-family: sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+::ng-deep .containerHeader {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+::ng-deep .containerAvatarInfo {
+    display: flex;
+    gap: 8px
+}
+
+::ng-deep .p-avatar {
+    height: 100px !important;
+    width: 100px !important;
+}
+
+::ng-deep .containerInformaion {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .avatar {
     font-family: sans-serif;
 }
 
-.itens {
+.containerCategories {
     display: flex;
-    width: 100%;
     flex-direction: column;
-    padding: 8px;
-    gap: 16px;
-}
-
-.logoComponent {
-    display: flex;
-    gap: 8px;
-    flex-direction: column;
-}
-
-.logo {
-    height: 80px;
-    width: 100%;
-}
-
-.divider {
-    height: 1px;
-    background: #F0F0F0;
-    width: 100%;
-}
-
-.containerItems {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    overflow: auto;
+    gap: 8px;
 }
 
-.containerSair {
+.containerCategoria {
     display: flex;
-    gap: 8px;
     flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.tituloCategoria {
+    font-size: 12px;
+    color: gray;
 }

@@ -1,26 +1,59 @@
 import { MenuPrincipalModel } from "../app/menu.principal/menu.principal.model";
-import { EnumCategoriaMenuPrincipal } from "../enuns/app/menu.principal/enum.categoria.menu.principal";
-import { EnumMenuPrincipal } from "../enuns/app/menu.principal/enum.menu.principal";
+import { UsuarioDepartamentoEnum } from "../enuns/api/usuario/usuario.departamento.enum";
+import { MenuPrincipalEnum } from "../enuns/app/menu.principal/menu.principal.enum";
 
 export const MenuPrincipalMock: Map<string, MenuPrincipalModel> = new Map([
+
+    //DASHBOARD
+    [
+        'Dashboard',
+        new MenuPrincipalModel(
+            'Dashboard',
+            '/dashboard',
+            MenuPrincipalEnum.DASHBOARD,
+            UsuarioDepartamentoEnum.SEM_DEPARTAMENTO,
+        )
+    ],
+
     //RECEPÇÃO
     [
-        'Recepção', 
-        new MenuPrincipalModel (
-            'Clientes', 
-            '/cliente', 
-            EnumCategoriaMenuPrincipal.RECEPCAO, 
-            EnumMenuPrincipal.CLIENTE
+        'Cliente',
+        new MenuPrincipalModel(
+            'Clientes',
+            '/clientes',
+            MenuPrincipalEnum.CLIENTE,
+            UsuarioDepartamentoEnum.RECEPCAO,
+        ),
+    ],
+    [
+        'Documentos',
+        new MenuPrincipalModel(
+            'Documentos',
+            '/documentos',
+            MenuPrincipalEnum.DOCUMENTOS,
+            UsuarioDepartamentoEnum.RECEPCAO,
         ),
     ],
 
-    //
-    // [
-    //     EnumMenuPrincipal.PERFIL,  
-    //     new MenuPrincipalModel('Perfil', '/perfil', EnumMenuPrincipal.PERFIL)
-    // ],
-    // [
-    //     EnumMenuPrincipal.SAIR, 
-    //     new MenuPrincipalModel('Sair', '/sair', EnumMenuPrincipal.SAIR)
-    // ]
+    //COMERCIAL
+    [
+        'Simulador',
+        new MenuPrincipalModel(
+            'Simulador',
+            '/simulador',
+            MenuPrincipalEnum.SIMULADOR,
+            UsuarioDepartamentoEnum.COMERCIAL,
+        )
+    ],
+
+    //SAIR
+    [
+        'Sair', 
+        new MenuPrincipalModel(
+            'Sair', 
+            '/sair', 
+            MenuPrincipalEnum.SAIR,
+            UsuarioDepartamentoEnum.SEM_DEPARTAMENTO
+        )
+    ]
 ])

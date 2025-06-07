@@ -1,0 +1,32 @@
+.containerRoot {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.containerUsuario {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.containerPaginacao {
+  display: flex;
+  justify-content: flex-end;
+}
+
+::ng-deep .p-paginator {
+  border-radius: 16px;
+}
+
+::ng-deep .p-select {
+  border-radius: 16px;
+}

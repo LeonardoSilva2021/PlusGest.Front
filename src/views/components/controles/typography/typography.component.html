@@ -1,0 +1,12 @@
+<p 
+    [ngSwitch]="props.variant" 
+    [ngClass]="{
+        'primary': props.variant === 'primary',
+        'secondary': props.variant === 'secondary',
+        'caption': props.variant === 'caption',
+        'h3': props.variant === 'h3',
+        'h2': props.variant === 'h2',
+    }"
+>
+    <ng-content></ng-content>
+</p>
