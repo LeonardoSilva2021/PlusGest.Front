@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { TypographyComponent } from "../../../components/controles/typography/typography.component";
 import { ButtonModule } from "primeng/button";
 import { PaginatorModule } from 'primeng/paginator';
+import { HeaderPageComponentProps } from "./header.page.component.props";
 
 @Component({
     selector: 'header-page-component',
@@ -11,5 +12,5 @@ import { PaginatorModule } from 'primeng/paginator';
 })
 
 export class HeaderPageComponent {
-    
+    @Input() props!: HeaderPageComponentProps;
 }

@@ -18,3 +18,18 @@
     border-radius: 16px;
     padding: 16px;
 }
+
+.containerPaginacao {
+    display: flex;
+    justify-content: flex-end;
+}
+
+::ng-deep .p-paginator {
+    border-radius: 16px;
+}
+
+.containerClientes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

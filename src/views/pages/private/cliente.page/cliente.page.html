@@ -1,6 +1,18 @@
 <div class="container">
-    <header-page-component></header-page-component>
+    <header-page-component [props]="{
+            title: 'Clientes'
+        }">
+    </header-page-component>
+    <div class="containerPaginacao">
+        <p-paginator [first]="1" [rows]="10" [totalRecords]="120" [showFirstLastIcon]="false" />
+    </div>
     <div class="frame">
-        <card-cliente-component></card-cliente-component>
+        <div class="containerClientes">
+            @for (cliente of arrayClientes; track cliente.id) {
+            <card-cliente-component [props]="{
+                    model: cliente,
+                }"></card-cliente-component>
+            }
+        </div>
     </div>
 </div>

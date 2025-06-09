@@ -17,7 +17,6 @@ export class DefaultIconComponent {
     private _props!: DefaultIconComponentProps;
 
     @Input() set props(value: DefaultIconComponentProps) {
-        console.log(this._props)
         this._props = value;
         this.safeSvg = this.sanitizer.bypassSecurityTrustHtml(value.content);
     }
@@ -25,5 +24,4 @@ export class DefaultIconComponent {
     get props(): DefaultIconComponentProps {
         return this._props;
     }
-    
 }

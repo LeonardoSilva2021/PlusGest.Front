@@ -1,10 +1,12 @@
 <div class="containerRoot">
     <div class="container">
         <div>
-            <typography-component [props]="{
-            variant: 'h2'
-        }">
-                Cliente
+            <typography-component 
+                [props]="{
+                    variant: 'h2'
+                }"
+            >
+                {{ props.title }}
             </typography-component>
         </div>
         <div class="containerUsuario">
@@ -12,8 +14,5 @@
                 Usuario
             </p-button>
         </div>
-    </div>
-    <div class="containerPaginacao">
-        <p-paginator [first]="1" [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]" />
     </div>
 </div>

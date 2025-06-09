@@ -17,16 +17,3 @@
   display: flex;
   justify-content: flex-end;
 }
-
-.containerPaginacao {
-  display: flex;
-  justify-content: flex-end;
-}
-
-::ng-deep .p-paginator {
-  border-radius: 16px;
-}
-
-::ng-deep .p-select {
-  border-radius: 16px;
-}

@@ -1,14 +1,75 @@
-<card-component>
-    <div>
-        <typography-component [props]="{
+<card-component [props]="{
+    classname: 'card',
+}">
+    <div class="container">
+        <div>
+            <img src="assets/images/Image.png" class="image" />
+        </div>
+        <div>
+            <typography-component [props]="{
             variant: 'caption'
         }">
-            Nome
-        </typography-component>
-        <typography-component [props]="{
+                Nome
+            </typography-component>
+            <typography-component [props]="{
             variant: 'primary'
         }">
-            Leonardo
-        </typography-component>
+                {{ props.model.nome }}
+            </typography-component>
+        </div>
+        <div>
+            <typography-component [props]="{
+            variant: 'caption'
+        }">
+                RG
+            </typography-component>
+            <typography-component [props]="{
+            variant: 'primary'
+        }">
+                {{ props.model.rg }}
+            </typography-component>
+        </div>
+        <div>
+            <typography-component [props]="{
+            variant: 'caption'
+        }">
+                CPF
+            </typography-component>
+            <typography-component [props]="{
+            variant: 'primary'
+        }">
+                {{ props.model.cpf }}
+            </typography-component>
+        </div>
+        <div>
+            <typography-component [props]="{
+            variant: 'caption'
+        }">
+                Data Nascimento
+            </typography-component>
+            <typography-component [props]="{
+            variant: 'primary'
+        }">
+                {{ props.model.dataNascimento }}
+            </typography-component>
+        </div>
+        <div>
+            <typography-component [props]="{
+            variant: 'caption'
+        }">
+                Telefone
+            </typography-component>
+            <typography-component [props]="{
+            variant: 'primary'
+        }">
+                {{ props.model.celular }}
+            </typography-component>
+        </div>
+        <div class="containerEdit">
+            <p-divider layout="vertical" />
+            <edit-icon-component [props]="{
+                fill: '#000'
+            }"></edit-icon-component>
+        </div>
     </div>
 </card-component>

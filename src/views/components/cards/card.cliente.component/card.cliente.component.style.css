@@ -1,0 +1,23 @@
+::ng-deep .card {
+    display: flex;
+    width: 100%;
+    background: #FFF;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.image {
+    height: 32px;
+    width: 32px;
+}
+
+.containerEdit {
+    display: flex;
+    align-items: center;
+}
