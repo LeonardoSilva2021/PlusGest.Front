@@ -1,27 +1,18 @@
-import { Component, Input } from "@angular/core";
-import { DefaultIconComponentProps } from "./default.icon.component.props";
-import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
+import { Component, Input } from '@angular/core';
+import { DefaultIconComponentProps } from './default.icon.component.props';
+import { CommonModule } from '@angular/common';
+import { SvgElement } from './svg.element.props';
 
 @Component({
-    standalone: true,
-    selector: 'default-icon-component',
-    templateUrl: './default.icon.component.html',
-    styleUrl: './default.icon.component.styles.css'
+  selector: 'default-icon-component',
+  imports: [CommonModule],
+  templateUrl: './default.icon.component.html',
+  styleUrl: './default.icon.component.styles.css',
 })
-
 export class DefaultIconComponent {
-    safeSvg: SafeHtml = '';
+  @Input() props!: DefaultIconComponentProps;
 
-    constructor(private sanitizer: DomSanitizer) { }
-
-    private _props!: DefaultIconComponentProps;
-
-    @Input() set props(value: DefaultIconComponentProps) {
-        this._props = value;
-        this.safeSvg = this.sanitizer.bypassSecurityTrustHtml(value.content);
-    }
-
-    get props(): DefaultIconComponentProps {
-        return this._props;
-    }
+  trackByFn(index: number, el: any): any {
+    return index;
+  }
 }

@@ -1,3 +1,3 @@
 export interface PersonBustIconComponentProps {
-    fill: string;
+    classname: string;
 }

@@ -1,3 +1,4 @@
 export interface ExitIconComponentProps {
-    fill: string
+    classname: string;
+    fill: string;
 }

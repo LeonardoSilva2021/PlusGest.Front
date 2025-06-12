@@ -10,11 +10,17 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
 }
 
 .image {
     height: 32px;
     width: 32px;
+}
+
+.avatar {
+    height: 50px !important;
+    width: 50px !important;
 }
 
 .containerEdit {

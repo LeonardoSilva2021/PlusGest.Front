@@ -1,3 +1,4 @@
 export interface AddUserIconComponentProps {
-    fill: string
+    classname: string;
+    fill: string;
 }

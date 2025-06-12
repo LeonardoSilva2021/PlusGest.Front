@@ -17,3 +17,10 @@
   display: flex;
   justify-content: flex-end;
 }
+
+::ng-deep .p-button:hover {
+  background-color: inherit !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  border-color: transparent !important;
+}

@@ -1,7 +1,15 @@
-<svg 
-    class="root" 
-    [attr.fill]="props.fill" 
-    viewBox="0 0 24 24" 
-    [innerHTML]="safeSvg"
->
-</svg>
+<div class="container">
+    <svg 
+        viewBox="0 0 24 24"
+        class="root" 
+        [attr.fill]="props.fill" 
+        [ngClass]="props.classname" 
+    >
+      @for (item of props.elements; track item.tag) {
+        <path
+          [attr.d]="item.attrs['d']"
+          [attr.fill-rule]="'evenodd'"
+        />
+      }
+    </svg>
+</div>

@@ -18,7 +18,7 @@ export class ClientePage {
             'Sebastiana Rosângela da Cruz',
             334627722,
             99889399300,
-            '06/02/1951',
+            '06052025',
             8738668631,
             'sebastiana-dacruz78@vipsaude.com.br',
             56600976,
@@ -33,7 +33,7 @@ export class ClientePage {
             'Enzo Heitor André Nascimento',
             311952409,
             67733674336,
-            '05/04/1984',
+            '05041984',
             83991335927,
             'enzoheitornascimento@enable.com.br',
             58434637,
@@ -42,7 +42,7 @@ export class ClientePage {
             'PB',
             'Entrou as 10 horas',
             'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png',
-        )
+        ),
     ];
 
     get arrayClientes(): ClienteModel[] {

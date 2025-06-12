@@ -5,33 +5,57 @@
             <!-- DASHBOARD -->
             <dashboard-icon-component
                 *ngSwitchCase="enumMenu.DASHBOARD"
-                [props]="addUserIcon">
+                [props]="{
+                    classname: 'icons',
+                    fill: switchIconsColors(),
+                }"
+            >
             </dashboard-icon-component>
 
             <!-- RECPÇÃO -->
             <person-icon-text-component
                 *ngSwitchCase="enumMenu.CLIENTE"
-                [props]="personTextIcon">
+                [props]="{
+                    classname: 'icons',
+                    fill: switchIconsColors(),
+                }"
+            >
             </person-icon-text-component>
             <document-icon-component
                 *ngSwitchCase="enumMenu.DOCUMENTOS"
-                [props]="personTextIcon">
+                [props]="{
+                    classname: 'icons',
+                    fill: switchIconsColors(),
+                }"
+            >
             </document-icon-component>
 
             <!-- COMERCIAL --> 
             <person-icon-text-component
                 *ngSwitchCase="enumMenu.SIMULADOR"
-                [props]="personTextIcon">
+                [props]="{
+                    classname: 'icons',
+                    fill: switchIconsColors(),
+                }"
+            >
             </person-icon-text-component>
             <person-icon-text-component
                 *ngSwitchCase="enumMenu.CONTRATOS"
-                [props]="personTextIcon">
+                [props]="{
+                    classname: 'icons',
+                    fill: switchIconsColors(),
+                }"
+            >
             </person-icon-text-component>
 
             <!-- SAIR -->
             <exit-icon-component
                 *ngSwitchCase="enumMenu.SAIR"
-                [props]="exitIcon">
+                [props]="{
+                    classname: 'icons',
+                    fill: switchIconsColors(),
+                }" 
+            >
             </exit-icon-component>
         </div>
         {{ props.model.titulo }}

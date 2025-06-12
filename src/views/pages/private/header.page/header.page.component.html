@@ -10,8 +10,11 @@
             </typography-component>
         </div>
         <div class="containerUsuario">
-            <p-button variant="text">
-                Usuario
+            <p-button [rounded]="true" [text]="true">
+                <settings-icon-component [props]="{
+                    classname: '',
+                    fill: '#000'
+                }"></settings-icon-component>
             </p-button>
         </div>
     </div>

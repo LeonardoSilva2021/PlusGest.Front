@@ -3,7 +3,7 @@
 }">
     <div class="container">
         <div>
-            <img src="assets/images/Image.png" class="image" />
+            <p-avatar styleClass="avatar" [image]="props.model.foto" shape="circle" />
         </div>
         <div>
             <typography-component [props]="{
@@ -26,7 +26,7 @@
             <typography-component [props]="{
             variant: 'primary'
         }">
-                {{ props.model.rg }}
+                {{ rgFormatado() }}
             </typography-component>
         </div>
         <div>
@@ -38,7 +38,7 @@
             <typography-component [props]="{
             variant: 'primary'
         }">
-                {{ props.model.cpf }}
+                {{ cpfFormatado() }}
             </typography-component>
         </div>
         <div>
@@ -50,7 +50,7 @@
             <typography-component [props]="{
             variant: 'primary'
         }">
-                {{ props.model.dataNascimento }}
+                {{ dataNascimentoFormatado() }}
             </typography-component>
         </div>
         <div>
@@ -62,12 +62,13 @@
             <typography-component [props]="{
             variant: 'primary'
         }">
-                {{ props.model.celular }}
+                {{ celularFormatado() }}
             </typography-component>
         </div>
         <div class="containerEdit">
             <p-divider layout="vertical" />
             <edit-icon-component [props]="{
+                classname: '',
                 fill: '#000'
             }"></edit-icon-component>
         </div>

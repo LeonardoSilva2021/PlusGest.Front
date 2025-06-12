@@ -3,13 +3,10 @@ import { ButtonComponent } from '../../../../components/controles/button/button.
 import { CommonModule } from '@angular/common';
 import { ButtonComponentProps } from '../../../../components/controles/button/button.component.props';
 import { MenuItemComponentProps } from './menu.item.component.props';
-import { AddUserIconComponentProps } from '../../../../components/icones/add.user.icon/add.user.icon.component.props';
 import { PersonTextIconComponent } from '../../../../components/icones/person.text.icon/person.text.icon.component';
-import { PersonTextIconComponentProps } from '../../../../components/icones/person.text.icon/person.text.icon.component.props';
 import { ExitIconComponent } from '../../../../components/icones/exit.icon/exit.icon.component';
 import { DashboardIconComponent } from '../../../../components/icones/dashboard.icon/dashboard.icon.component';
 import { MenuPrincipalEnum } from '../../../../../models/enuns/app/menu.principal/menu.principal.enum';
-import { ExitIconComponentProps } from '../../../../components/icones/exit.icon/exit.icon.component.props';
 import { DocumentIconComponent } from '../../../../components/icones/document.icon/document.icon.component';
 import { Router } from '@angular/router';
 
@@ -72,30 +69,5 @@ export class MenuPrincipalItemComponent {
       case MenuPrincipalEnum.SAIR:
         return this.props.sigTipo() === this.props.model.tipo ? '#FFF' : '#000';
     }
-  }
-
-  //PROPS DOS ICONES
-  get addUserIcon(): AddUserIconComponentProps {
-    return {
-      fill: this.switchIconsColors(),
-    };
-  }
-
-  get personTextIcon(): PersonTextIconComponentProps {
-    return {
-      fill: this.switchIconsColors(),
-    };
-  }
-
-  get documentIcon(): ExitIconComponentProps {
-    return {
-      fill: this.switchIconsColors(),
-    };
-  }
-
-  get exitIcon(): ExitIconComponentProps {
-    return {
-      fill: this.switchIconsColors(),
-    };
   }
 }
