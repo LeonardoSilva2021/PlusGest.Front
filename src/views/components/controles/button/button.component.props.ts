@@ -1,4 +1,8 @@
 export interface ButtonComponentProps {
-    variant: 'default' | 'primary' | 'secondary';
+    fullwidth?: boolean; 
+    text?: boolean;
+    rounded?: boolean;
+    raised?: boolean;
+    classname?: string;
     onClick: () => void;
 }

@@ -1,6 +1,14 @@
-<button 
-    [ngClass]="['btn-' + props.variant]"
+<p-button 
+    class="button-default"
+    [rounded]="props.rounded"
+    [raised]="props.raised"
+    [text]="props.text"
     (click)="props.onClick()"
+    [ngClass]="[
+        props.fullwidth ? 'full-width' : '',
+        props.classname !== '' ? props.classname : '',
+        !props.text ? 'button-active' : '',
+    ]"
 >
     <ng-content></ng-content>
-</button>
+</p-button>

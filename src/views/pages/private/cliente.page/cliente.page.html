@@ -1,7 +1,9 @@
 <div class="container">
-    <header-page-component [props]="{
+    <header-page-component 
+        [props]="{
             title: 'Clientes'
-        }">
+        }"
+    >
     </header-page-component>
     <div class="containerPaginacao">
         <p-paginator [first]="1" [rows]="10" [totalRecords]="120" [showFirstLastIcon]="false" />
@@ -9,10 +11,33 @@
     <div class="frame">
         <div class="containerClientes">
             @for (cliente of arrayClientes; track cliente.id) {
-            <card-cliente-component [props]="{
-                    model: cliente,
-                }"></card-cliente-component>
+                <card-cliente-component 
+                    [props]="{
+                        model: cliente,
+                    }"
+                >
+                </card-cliente-component>
             }
         </div>
+    </div>
+    <div class="button-container">
+        <button-component 
+            [props]="{
+                fullwidth: false,
+                text: false,
+                raised: true,
+                rounded: true,
+                classname: '',
+                onClick: handleClick,
+            }"
+        >
+            <add-user-icon 
+                [props]="{
+                classname: '',
+                fill: '#FFF'
+                }"
+            >
+            </add-user-icon>
+        </button-component>
     </div>
 </div>

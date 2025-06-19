@@ -5,7 +5,7 @@
         [attr.fill]="props.fill" 
         [ngClass]="props.classname" 
     >
-      @for (item of props.elements; track item.tag) {
+      @for (item of props.elements; track item.id) {
         <path
           [attr.d]="item.attrs['d']"
           [attr.fill-rule]="'evenodd'"

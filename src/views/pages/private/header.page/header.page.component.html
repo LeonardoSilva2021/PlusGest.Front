@@ -10,12 +10,28 @@
             </typography-component>
         </div>
         <div class="containerUsuario">
-            <p-button [rounded]="true" [text]="true">
+            <button-component [props]="{
+                fullwidth: false,
+                text: true,
+                classname: '',
+                onClick: handleClick,
+            }">
+                <badge-icon-component [props]="{
+                    classname: '',
+                    fill: '#000'
+                }"></badge-icon-component>
+            </button-component>
+            <button-component [props]="{
+                fullwidth: false,
+                text: true,
+                classname: '',
+                onClick: handleClick,
+            }">
                 <settings-icon-component [props]="{
                     classname: '',
                     fill: '#000'
                 }"></settings-icon-component>
-            </p-button>
+            </button-component>
         </div>
     </div>
 </div>

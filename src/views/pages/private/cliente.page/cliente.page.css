@@ -33,3 +33,9 @@
     flex-direction: column;
     gap: 16px;
 }
+
+.button-container {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}

@@ -31,7 +31,13 @@
     cursor: pointer;
 }
 
-.icons {
+::ng-deep .button-menu .p-button{
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+::ng-deep .icons {
     display: inline-block;
-    margin-right: 8px;
+    margin-right: 8px !important;
 }

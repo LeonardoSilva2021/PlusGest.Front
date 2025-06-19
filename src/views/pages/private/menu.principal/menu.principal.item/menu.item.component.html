@@ -1,5 +1,10 @@
 <div>
-    <button-component [props]="botaoProps">
+    <button-component [props]="{
+        fullwidth: true,
+        text: props.sigTipo() === props.model.tipo ? false : true,
+        classname: 'button-menu',
+        onClick: handleClick,
+    }">
         <div [ngSwitch]="props.model.tipo">
 
             <!-- DASHBOARD -->

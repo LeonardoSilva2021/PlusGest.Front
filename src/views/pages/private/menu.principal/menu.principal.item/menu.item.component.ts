@@ -38,14 +38,6 @@ export class MenuPrincipalItemComponent {
     });
   };
 
-  get botaoProps(): ButtonComponentProps {
-    return {
-      variant:
-        this.props.sigTipo() === this.props.model.tipo ? 'primary' : 'default',
-      onClick: () => this.handleClick(),
-    };
-  }
-
   // SWITCH DA COR DOS ICONES
   switchIconsColors() {
     switch (this.props.model.tipo) {

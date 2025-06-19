@@ -3,12 +3,20 @@ import { HeaderPageComponent } from "../header.page/header.page.component";
 import { CardClienteComponent } from "../../../components/cards/card.cliente.component/card.cliente.component";
 import { PaginatorModule } from "primeng/paginator";
 import { ClienteModel } from "../../../../models/api/cliente/cliente.model";
+import { ButtonComponent } from "../../../components/controles/button/button.component";
+import { AddUserIconComponent } from "../../../components/icones/add.user.icon/add.user.icon.component";
 
 @Component({
     selector: 'cliente-page',
     templateUrl: './cliente.page.html',
     styleUrl: './cliente.page.css',
-    imports: [HeaderPageComponent, CardClienteComponent, PaginatorModule],
+    imports: [
+        HeaderPageComponent, 
+        CardClienteComponent, 
+        PaginatorModule, 
+        ButtonComponent, 
+        AddUserIconComponent
+    ],
 })
 
 export class ClientePage {
@@ -47,5 +55,9 @@ export class ClientePage {
 
     get arrayClientes(): ClienteModel[] {
         return this.clientes;
+    }
+
+    handleClick() {
+        
     }
 }
