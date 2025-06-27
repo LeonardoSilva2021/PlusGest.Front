@@ -4,5 +4,6 @@ export interface ButtonComponentProps {
     rounded?: boolean;
     raised?: boolean;
     classname?: string;
+    outlined?: boolean;
     onClick: () => void;
 }

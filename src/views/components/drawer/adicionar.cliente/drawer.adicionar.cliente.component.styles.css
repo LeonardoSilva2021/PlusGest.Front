@@ -1,0 +1,7 @@
+.button-cancelar-container {
+    grid-column: span 4;
+}
+
+.button-salvar-container {
+    grid-column: span 8;
+}

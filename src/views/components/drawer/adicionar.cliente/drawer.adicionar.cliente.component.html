@@ -1,0 +1,47 @@
+<ng-template #endButtons>
+    <grid-component 
+        [props]="{
+            container: true,
+        }"
+    >
+        <div class="button-cancelar-container">
+            <button-component 
+                [props]="{
+                    fullwidth: true,
+                    classname: '',
+                    outlined: true,
+                    onClick: onClickSalvar,
+                }"
+            >
+                Cancelar
+            </button-component>
+        </div>
+        <div class="button-salvar-container">
+            <button-component 
+                [props]="{
+                    fullwidth: true,
+                    classname: '',
+                    onClick: onClickSalvar,
+                }"
+            >
+                Salvar
+            </button-component>
+        </div>
+    </grid-component>
+</ng-template>
+
+<drawer-component 
+    [props]="{
+        visible: props.visible,
+        position: 'right',
+        title: 'Adicionar Cliente',
+        onClose: props.onClose,
+        endButtons: endButtons,
+        onShow: onDrawerShow,
+    }"
+>
+    <form-adicionar-cliente-component 
+        #formRef
+    >
+    </form-adicionar-cliente-component>
+</drawer-component>

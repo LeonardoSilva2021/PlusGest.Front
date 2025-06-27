@@ -1,15 +1,35 @@
 <div class="container">
-    <svg 
-        viewBox="0 0 24 24"
-        class="root" 
-        [attr.fill]="props.fill" 
-        [ngClass]="props.classname" 
-    >
-      @for (item of props.elements; track item.id) {
-        <path
-          [attr.d]="item.attrs['d']"
-          [attr.fill-rule]="'evenodd'"
-        />
+  <svg 
+    viewBox="0 0 24 24"
+    class="root" 
+    [attr.fill]="props.fill" 
+    [ngClass]="props.classname" 
+  >
+    @for (item of props.elements; track item.id) {
+      @switch (item.tag) {
+        @case ("path") {
+          <path
+            [attr.d]="item.attrs['d']"
+            [attr.stroke]="item.attrs['stroke']"
+            [attr.stroke-width]="item.attrs['stroke-width']"
+            [attr.stroke-linecap]="item.attrs['stroke-linecap']"
+            [attr.stroke-linejoin]="item.attrs['stroke-linejoin']"
+            [attr.fill]="item.attrs['fill']"
+            [attr.fill-rule]="item.attrs['fill-rule']"
+          />
+        }
+        @case ("circle") {
+          <circle
+            [attr.cx]="item.attrs['cx']"
+            [attr.cy]="item.attrs['cy']"
+            [attr.r]="item.attrs['r']"
+            [attr.transform]="item.attrs['transform']"
+            [attr.fill]="item.attrs['fill']"
+            [attr.stroke]="item.attrs['stroke']"
+            [attr.stroke-width]="item.attrs['stroke-width']"
+          />
+        }
       }
-    </svg>
+    }
+  </svg>
 </div>

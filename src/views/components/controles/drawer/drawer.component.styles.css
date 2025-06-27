@@ -1,0 +1,15 @@
+::ng-deep .p-drawer {
+    width: 30rem !important;
+}
+
+::ng-deep .p-drawer-right {
+    border-radius: 16px 0px 0px 16px;
+}
+
+::ng-deep .p-drawer-header {
+    padding: 16px;
+}
+
+::ng-deep .p-drawer-footer {
+    padding: 16px;
+}

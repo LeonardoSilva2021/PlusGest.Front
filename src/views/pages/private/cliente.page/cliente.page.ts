@@ -1,25 +1,31 @@
-import { Component } from "@angular/core";
+import { Component, signal } from "@angular/core";
 import { HeaderPageComponent } from "../header.page/header.page.component";
 import { CardClienteComponent } from "../../../components/cards/card.cliente.component/card.cliente.component";
 import { PaginatorModule } from "primeng/paginator";
 import { ClienteModel } from "../../../../models/api/cliente/cliente.model";
 import { ButtonComponent } from "../../../components/controles/button/button.component";
 import { AddUserIconComponent } from "../../../components/icones/add.user.icon/add.user.icon.component";
+import { DrawerAdicionarClienteComponentProps } from "../../../components/drawer/adicionar.cliente/drawer.adicionar.cliente.component.props";
+import { DrawerAdicionarClienteComponent } from "../../../components/drawer/adicionar.cliente/drawer.adicionar.cliente.component";
 
 @Component({
     selector: 'cliente-page',
     templateUrl: './cliente.page.html',
     styleUrl: './cliente.page.css',
     imports: [
-        HeaderPageComponent, 
-        CardClienteComponent, 
-        PaginatorModule, 
-        ButtonComponent, 
-        AddUserIconComponent
+        HeaderPageComponent,
+        CardClienteComponent,
+        PaginatorModule,
+        ButtonComponent,
+        AddUserIconComponent,
+        DrawerAdicionarClienteComponent
     ],
 })
 
 export class ClientePage {
+
+    openDrawer = signal<boolean>(false);
+
     clientes: Array<ClienteModel> = [
         new ClienteModel(
             '1',
@@ -57,7 +63,18 @@ export class ClientePage {
         return this.clientes;
     }
 
-    handleClick() {
-        
+    handleClick = () => {
+        this.openDrawer.set(!this.openDrawer());
+    }
+
+    closeDrawer = () => {
+        this.openDrawer.set(!this.openDrawer());
+    }
+
+    get propsDrawer(): DrawerAdicionarClienteComponentProps {
+        return {
+            visible: this.openDrawer(),
+            onClose: this.closeDrawer,
+        }
     }
 }

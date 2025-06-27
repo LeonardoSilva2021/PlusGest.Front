@@ -1,17 +1,16 @@
 <div class="containerRoot">
     <div class="container">
         <div>
-            <typography-component 
-                [props]="{
+            <typography-component [props]="{
                     variant: 'h2'
-                }"
-            >
+                }">
                 {{ props.title }}
             </typography-component>
         </div>
         <div class="containerUsuario">
             <button-component [props]="{
                 fullwidth: false,
+                rounded: true,
                 text: true,
                 classname: '',
                 onClick: handleClick,
@@ -24,6 +23,7 @@
             <button-component [props]="{
                 fullwidth: false,
                 text: true,
+                rounded: true,
                 classname: '',
                 onClick: handleClick,
             }">
