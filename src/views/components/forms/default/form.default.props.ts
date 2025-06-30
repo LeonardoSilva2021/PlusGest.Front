@@ -1,8 +1,7 @@
-import { Directive, Input } from "@angular/core"
+import { Directive, ElementRef, Input } from "@angular/core"
 
 @Directive()
 export abstract class FormDefaultProps<T> {
-
-    @Input() onClick!: () => void;
+    @Input() submitForm!: ElementRef<HTMLButtonElement>;
     @Input() handleSubmit!: (model: T) => void;
 }

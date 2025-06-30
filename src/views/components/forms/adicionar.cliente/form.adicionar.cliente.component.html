@@ -1,3 +1,5 @@
-<form>
-    <button (click)="props.onClick()" type="submit" class="buttonSubmmit"></button>
+<form [formGroup]="form" (ngSubmit)="onSubmitInternal()">
+  <label>Nome: <input formControlName="nome" /></label>
+  <label>Email: <input formControlName="email" /></label>
+  <button type="submit" style="display: none">Submit</button>
 </form>

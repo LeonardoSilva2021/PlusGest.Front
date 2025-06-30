@@ -1,6 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from "@angular/core";
 import { ClienteModel } from "../../../../models/api/cliente/cliente.model";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FormDefaultProps } from "../default/form.default.props";
 
 @Component({
@@ -13,6 +13,31 @@ import { FormDefaultProps } from "../default/form.default.props";
     styleUrl: './form.adicionar.cliente.component.styles.css',
 })
 
-export class FormAdicionarClienteComponent extends FormDefaultProps<ClienteModel> {
-   @Input({ required: false }) props!: FormDefaultProps<ClienteModel>;
+export class FormAdicionarClienteComponent {
+    @Input() handleSubmit!: (model: ClienteModel) => void;
+    @Output() formReady = new EventEmitter<FormAdicionarClienteComponent>();
+
+    ngAfterViewInit(): void {
+        this.formReady.emit(this); // emite a própria instância
+    }
+
+    form: FormGroup;
+
+    constructor(private fb: FormBuilder) {
+        this.form = this.fb.group({
+            nome: [''],
+            email: [''],
+        });
+    }
+
+    submit() {
+        console.log('entrou')
+        this.onSubmitInternal()
+    }
+
+    onSubmitInternal() {
+        if (this.handleSubmit) {
+            this.handleSubmit(this.form.value);
+        }
+    }
 }

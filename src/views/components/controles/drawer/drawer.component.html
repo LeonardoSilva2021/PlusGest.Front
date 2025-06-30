@@ -2,7 +2,6 @@
     [visible]="props.visible"
     [position]="props.position"
     (onHide)="props.onClose()"
-    (onShow)="props.onShow()"
 >
     <ng-template #header>
         <div>
@@ -15,9 +14,15 @@
             </typography-component>
         </div>
     </ng-template>
-    <ng-template #content>
-        <ng-content></ng-content>
-    </ng-template>
+
+    @if (props.formContainer) {
+        <ng-template #content>
+            <ng-container
+                *ngTemplateOutlet="props.formContainer"
+            ></ng-container>
+        </ng-template>
+    }
+
     @if (props.endButtons) {
         <ng-template #footer>
             <ng-container 

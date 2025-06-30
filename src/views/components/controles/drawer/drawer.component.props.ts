@@ -5,6 +5,6 @@ export interface DrawerComponentProps {
     position: 'left' | 'right' | 'bottom' | 'top';
     title?: string;
     onClose: () => void;
-    onShow: () => void; 
-    endButtons?: TemplateRef<any>
+    endButtons?: TemplateRef<any>;
+    formContainer?: TemplateRef<any>;
 }

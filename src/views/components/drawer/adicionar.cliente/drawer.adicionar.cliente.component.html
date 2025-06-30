@@ -1,29 +1,31 @@
-<ng-template #endButtons>
-    <grid-component 
-        [props]="{
-            container: true,
-        }"
+<ng-template #formContainer>
+    <form-adicionar-cliente-component 
+        (formReady)="setFormRef($event)"
+        [handleSubmit]="handleSubmit"
     >
+    </form-adicionar-cliente-component>
+</ng-template>
+
+<ng-template #endButtons>
+    <grid-component [props]="{
+            container: true,
+        }">
         <div class="button-cancelar-container">
-            <button-component 
-                [props]="{
+            <button-component [props]="{
                     fullwidth: true,
                     classname: '',
                     outlined: true,
                     onClick: onClickSalvar,
-                }"
-            >
+                }">
                 Cancelar
             </button-component>
         </div>
         <div class="button-salvar-container">
-            <button-component 
-                [props]="{
+            <button-component [props]="{
                     fullwidth: true,
                     classname: '',
                     onClick: onClickSalvar,
-                }"
-            >
+                }">
                 Salvar
             </button-component>
         </div>
@@ -37,11 +39,7 @@
         title: 'Adicionar Cliente',
         onClose: props.onClose,
         endButtons: endButtons,
-        onShow: onDrawerShow,
+        formContainer: formContainer,
     }"
 >
-    <form-adicionar-cliente-component 
-        #formRef
-    >
-    </form-adicionar-cliente-component>
 </drawer-component>
