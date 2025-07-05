@@ -1,0 +1,34 @@
+<p-floatlabel 
+    variant="on"
+>
+    @switch (props.type) {
+        @case ('text') {
+            <input 
+                [formControlName]="props.name"
+                pInputText 
+                autocomplete="off" 
+                pSize="large" 
+            />
+        }
+        @case ('number') {
+            <p-inputnumber 
+                [formControlName]="props.name"
+                pSize="large" 
+
+            />
+        }
+        @case ('mask') {
+            <p-inputmask 
+                [formControlName]="props.name"
+                pSize="large" 
+                [mask]="swictchMaks()"
+            />
+        }
+    }
+    
+    <label 
+        [id]="props.name"
+    >
+        {{ props.label }}
+    </label>
+</p-floatlabel>

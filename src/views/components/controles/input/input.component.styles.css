@@ -1,0 +1,33 @@
+::ng-deep .p-inputtext {
+    font-family: sans-serif !important;
+    font-size: 16px !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    padding-top: 16px;
+}
+
+::ng-deep .p-inputtext-lg {
+    height: 48px !important;
+    padding: 16px;
+}
+
+::ng-deep .p-inputnumber {
+    font-family: sans-serif !important;
+    font-size: 16px !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+}
+
+::ng-deep .p-inputmask {
+    font-family: sans-serif !important;
+    font-size: 16px !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    padding: 16px !important;
+    height: 48px !important;
+}
+
+::ng-deep .p-floatlabel label {
+    font-family: sans-serif !important;
+    font-size: 12px !important;
+}

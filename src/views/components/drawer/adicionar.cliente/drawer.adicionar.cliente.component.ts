@@ -1,10 +1,9 @@
-import { AfterViewInit, Component, Input, viewChild, ViewChild, ViewChildren, viewChildren } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { DrawerAdicionarClienteComponentProps } from "./drawer.adicionar.cliente.component.props";
 import { DrawerComponent } from "../../controles/drawer/drawer.component";
 import { ButtonComponent } from "../../controles/button/button.component";
 import { GridComponent } from "../../controles/grid/grid.component";
 import { FormAdicionarClienteComponent } from "../../forms/adicionar.cliente/form.adicionar.cliente.component";
-import { FormDefaultProps } from "../../forms/default/form.default.props";
 import { ClienteModel } from "../../../../models/api/cliente/cliente.model";
 
 @Component({
@@ -32,7 +31,6 @@ export class DrawerAdicionarClienteComponent {
 
   setFormRef(ref: FormAdicionarClienteComponent) {
     this.formRef = ref;
-    console.log('✅ formRef recebido no pai:', ref);
   }
 
   onClickSalvar = () => {
@@ -41,6 +39,6 @@ export class DrawerAdicionarClienteComponent {
       return;
     }
 
-    this.formRef.submit();
+    this.formRef.formSubmit();
   }
 }

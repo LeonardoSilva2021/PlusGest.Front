@@ -1,5 +1,166 @@
-<form [formGroup]="form" (ngSubmit)="onSubmitInternal()">
-  <label>Nome: <input formControlName="nome" /></label>
-  <label>Email: <input formControlName="email" /></label>
-  <button type="submit" style="display: none">Submit</button>
+<form 
+  [formGroup]="form" 
+  (ngSubmit)="onSubmit()"
+>
+  <div class="container">
+    <grid-component 
+      [props]="{
+        container: true,
+      }"
+    >
+      <div class="containerAvatar">
+        <p-avatar 
+          icon="pi pi-user" 
+          shape="circle" 
+          class="avatar"  
+        />
+
+        <input
+          #fileInput
+          type="file"
+          accept="image/*"
+          hidden
+        />
+
+        <div class="containerAvatarButtons">
+          <button-component
+            [props]="{
+              fullwidth: true,
+              classname: '',
+              outlined: true,
+              onClick: onClickSalvar,
+            }"
+          >
+            Remover Imagem
+          </button-component>
+          <button-component
+            [props]="{
+              fullwidth: true,
+              classname: '',
+              outlined: false,
+              onClick: onClickSalvar,
+            }"
+          >
+            Adicionar Imagem
+          </button-component>
+        </div>
+      </div>
+      <div class="containerNome" >
+        <input-component 
+          [props]="{
+            label: 'Nome Completo',
+            name: 'nome',
+            type: 'text'
+          }"
+        >
+        </input-component>
+      </div>
+      <div class="containerRG" >
+        <input-component 
+            [props]="{
+              label: 'RG',
+              name: 'rg',
+              type: 'mask',
+              mask: 'rg'
+            }"
+          >
+        </input-component>
+      </div>
+      <div class="containerCPF" >
+        <input-component 
+            [props]="{
+              label: 'CPF',
+              name: 'cpf',
+              type: 'mask',
+              mask: 'cpf'
+            }"
+          >
+        </input-component>
+      </div>
+      <div class="containerDataNas" >
+        <input-component 
+            [props]="{
+              label: 'Data de Nascimento',
+              name: 'dataNascimento',
+              type: 'mask',
+              mask: 'dataNascimento'
+            }"
+          >
+        </input-component>
+      </div>
+      <div class="containerCelular" >
+        <input-component 
+            [props]="{
+              label: 'Telefone Celular',
+              name: 'celular',
+              type: 'mask',
+              mask: 'celular',
+            }"
+          >
+        </input-component>
+      </div>
+      <div class="containerEmail" >
+        <input-component 
+            [props]="{
+              label: 'Email',
+              name: 'email',
+              type: 'text'
+            }"
+          >
+        </input-component>
+      </div>
+      <div class="containerCEP" >
+        <input-component 
+          [props]="{
+            label: 'CEP',
+            name: 'cep',
+            type: 'mask',
+            mask: 'cep',
+          }"
+        >
+        </input-component>
+      </div>
+      <div class="containerEndereco" >
+        <input-component 
+          [props]="{
+            label: 'Endereço',
+            name: 'endereco',
+            type: 'text'
+          }"
+        >
+        </input-component>
+      </div>
+      <div class="containerBairro" >
+        <input-component 
+          [props]="{
+            label: 'Bairro',
+            name: 'bairro',
+            type: 'text'
+          }"
+        >
+        </input-component>
+      </div>
+      <div class="containerEstado" >
+        <input-component 
+          [props]="{
+            label: 'Estado',
+            name: 'estado',
+            type: 'text'
+          }"
+        >
+        </input-component>
+      </div>
+      <div class="containerObservacao" >
+        <input-component 
+          [props]="{
+            label: 'Observação',
+            name: 'observacao',
+            type: 'text'
+          }"
+        >
+        </input-component>
+      </div>
+    </grid-component>
+  </div>
+  <button type="submit" class="buttonSubmit">Submit</button>
 </form>

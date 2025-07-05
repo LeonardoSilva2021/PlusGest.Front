@@ -1,3 +1,81 @@
-.buttonSubmmit {
+/* CONTAINER ROOT */
+.container {
+    padding-top: 8px;
+}
+
+/* AVATAR */
+.avatar {
+    height: 130px !important;
+    width: 130px !important;
+    cursor: pointer;
+}
+
+.containerAvatarButtons {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+::ng-deep .p-avatar-icon {
+    font-size: 48px;
+    height: 48px;
+    width: 48px;
+}
+
+/* SPAN DOS CAMPOS */
+.containerAvatar {
+    grid-column: span 12;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+}
+
+.containerNome {
+    grid-column: span 12;
+}
+
+.containerRG {
+    grid-column: span 6;
+}
+
+.containerCPF {
+    grid-column: span 6;
+}
+
+.containerDataNas {
+    grid-column: span 6;
+}
+
+.containerCelular {
+    grid-column: span 6;
+}
+
+.containerEmail {
+    grid-column: span 8;
+}
+
+.containerCEP {
+    grid-column: span 4;
+}
+
+.containerEndereco {
+    grid-column: span 12;
+}
+
+.containerBairro {
+    grid-column: span 6;
+}
+
+.containerEstado {
+    grid-column: span 6;
+}
+
+.containerObservacao {
+    grid-column: span 12;
+}
+
+/* BUTTON SUBMIT */
+.buttonSubmit {
     display: none;
 }
