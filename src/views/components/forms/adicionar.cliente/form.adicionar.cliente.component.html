@@ -9,43 +9,57 @@
       }"
     >
       <div class="containerAvatar">
-        <p-avatar 
-          icon="pi pi-user" 
-          shape="circle" 
-          class="avatar"  
-        />
+        @if (avatar()) {
+          <p-avatar
+            [image]="avatar()"
+            shape="circle"
+            class="avatar cursor-pointer"
+            (click)="triggerInput()"
+          >
+          </p-avatar>
+        } 
+        @else {
+          <p-avatar
+            [icon]="'pi pi-user'"
+            shape="circle"
+            class="avatar cursor-pointer"
+            (click)="triggerInput()"
+          >
+          </p-avatar>
+        }
 
         <input
-          #fileInput
+          id="realFileInput"
           type="file"
-          accept="image/*"
+          multiple
+          (change)="onFileChange($event)"
           hidden
         />
 
         <div class="containerAvatarButtons">
-          <button-component
+          <button-component 
             [props]="{
               fullwidth: true,
               classname: '',
               outlined: true,
-              onClick: onClickSalvar,
+              onClick: onClearAvatar
             }"
           >
             Remover Imagem
           </button-component>
-          <button-component
+          <button-component 
             [props]="{
               fullwidth: true,
               classname: '',
               outlined: false,
-              onClick: onClickSalvar,
+              onClick: triggerInput
             }"
           >
             Adicionar Imagem
           </button-component>
         </div>
       </div>
-      <div class="containerNome" >
+      <div class="containerNome">
         <input-component 
           [props]="{
             label: 'Nome Completo',
@@ -55,61 +69,61 @@
         >
         </input-component>
       </div>
-      <div class="containerRG" >
+      <div class="containerRG">
         <input-component 
-            [props]="{
-              label: 'RG',
-              name: 'rg',
-              type: 'mask',
-              mask: 'rg'
-            }"
-          >
+          [props]="{
+            label: 'RG',
+            name: 'rg',
+            type: 'mask',
+            mask: 'rg'
+          }"
+        >
         </input-component>
       </div>
-      <div class="containerCPF" >
+      <div class="containerCPF">
         <input-component 
-            [props]="{
-              label: 'CPF',
-              name: 'cpf',
-              type: 'mask',
-              mask: 'cpf'
-            }"
-          >
+          [props]="{
+            label: 'CPF',
+            name: 'cpf',
+            type: 'mask',
+            mask: 'cpf'
+          }"
+        >
         </input-component>
       </div>
-      <div class="containerDataNas" >
+      <div class="containerDataNas">
         <input-component 
-            [props]="{
-              label: 'Data de Nascimento',
-              name: 'dataNascimento',
-              type: 'mask',
-              mask: 'dataNascimento'
-            }"
-          >
+          [props]="{
+            label: 'Data de Nascimento',
+            name: 'dataNascimento',
+            type: 'mask',
+            mask: 'dataNascimento'
+          }"
+        >
         </input-component>
       </div>
-      <div class="containerCelular" >
+      <div class="containerCelular">
         <input-component 
-            [props]="{
-              label: 'Telefone Celular',
-              name: 'celular',
-              type: 'mask',
-              mask: 'celular',
-            }"
-          >
+          [props]="{
+            label: 'Telefone Celular',
+            name: 'celular',
+            type: 'mask',
+            mask: 'celular',
+          }"
+        >
         </input-component>
       </div>
-      <div class="containerEmail" >
+      <div class="containerEmail">
         <input-component 
-            [props]="{
-              label: 'Email',
-              name: 'email',
-              type: 'text'
-            }"
-          >
+          [props]="{
+            label: 'Email',
+            name: 'email',
+            type: 'text'
+          }"
+        >
         </input-component>
       </div>
-      <div class="containerCEP" >
+      <div class="containerCEP">
         <input-component 
           [props]="{
             label: 'CEP',
@@ -120,7 +134,7 @@
         >
         </input-component>
       </div>
-      <div class="containerEndereco" >
+      <div class="containerEndereco">
         <input-component 
           [props]="{
             label: 'Endereço',
@@ -130,7 +144,7 @@
         >
         </input-component>
       </div>
-      <div class="containerBairro" >
+      <div class="containerBairro">
         <input-component 
           [props]="{
             label: 'Bairro',
@@ -140,7 +154,7 @@
         >
         </input-component>
       </div>
-      <div class="containerEstado" >
+      <div class="containerEstado">
         <input-component 
           [props]="{
             label: 'Estado',
@@ -150,7 +164,7 @@
         >
         </input-component>
       </div>
-      <div class="containerObservacao" >
+      <div class="containerObservacao">
         <input-component 
           [props]="{
             label: 'Observação',

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output } from "@angular/core";
+import { AfterViewInit, Component, EventEmitter, Input, Output, signal, ViewChild } from "@angular/core";
 import { ClienteModel } from "../../../../models/api/cliente/cliente.model";
 import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ClienteFormModel } from "../../../../models/app/forms/cliente/cliente.form.model";
@@ -19,7 +19,7 @@ import { ButtonComponent } from "../../controles/button/button.component";
         GridComponent,
         InputComponent,
         AvatarModule,
-        ButtonComponent
+        ButtonComponent,
     ],
     templateUrl: './form.adicionar.cliente.component.html',
     styleUrl: './form.adicionar.cliente.component.styles.css',
@@ -28,6 +28,9 @@ import { ButtonComponent } from "../../controles/button/button.component";
 export class FormAdicionarClienteComponent implements AfterViewInit {
     @Input() handleSubmit!: (model: ClienteModel) => void;
     @Output() formReady = new EventEmitter<FormAdicionarClienteComponent>();
+
+    private files = signal<File[]>([]);
+    private avatarSignal = signal<string | undefined>(undefined);
 
     form!: FormGroup<ClienteFormModel>;
 
@@ -45,13 +48,45 @@ export class FormAdicionarClienteComponent implements AfterViewInit {
     }
 
     onSubmit() {
-        if (this.form.valid) {
-            const model: ClienteModel = this.form.getRawValue();
-            this.handleSubmit(model);
+        const model: ClienteModel = this.form.getRawValue();
+        this.handleSubmit(model);
+    }
+
+    onFileChange(event: Event) {
+        const target = event.target as HTMLInputElement;
+        const file = target.files?.[0];
+        if (file) {
+            this.files.set([file]);
+
+            const reader = new FileReader();
+            reader.onload = () => {
+                this.avatarSignal.set(reader.result as string);
+                const fotoControl = this.form.get('foto');
+                fotoControl?.setValue(reader.result as string);
+            };
+            reader.readAsDataURL(file);
         }
     }
 
-    onClickSalvar(fileInput: HTMLInputElement): void {
-        fileInput.click(); // ou sua lógica
+    triggerInput() {
+        const input = document.getElementById('realFileInput') as HTMLInputElement;
+        if (input)
+            input.click();
+    }
+
+    clearAvatar() {
+        this.avatarSignal.set(undefined);
+        this.files.set([]);
+        this.form.get('foto')?.reset();
+
+        const input = document.getElementById('realFileInput') as HTMLInputElement;
+        if (input)
+            input.value = '';
+    }
+
+    onClearAvatar = () => this.clearAvatar();
+
+    avatar() {
+        return this.avatarSignal();
     }
 }

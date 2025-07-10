@@ -4,7 +4,10 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'index-component',
-  imports: [MainPage, RouterOutlet],
+  imports: [
+    MainPage,
+    RouterOutlet,
+  ],
   template: `
     <main-page></main-page>
     <router-outlet></router-outlet>
@@ -17,4 +20,4 @@ import { RouterOutlet } from '@angular/router';
         }
     `,
 })
-export class IndexComponent {}
+export class IndexComponent { }

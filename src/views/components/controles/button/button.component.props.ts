@@ -5,5 +5,5 @@ export interface ButtonComponentProps {
     raised?: boolean;
     classname?: string;
     outlined?: boolean;
-    onClick: (element?: any) => void;
+    onClick: (event?: MouseEvent) => void;
 }

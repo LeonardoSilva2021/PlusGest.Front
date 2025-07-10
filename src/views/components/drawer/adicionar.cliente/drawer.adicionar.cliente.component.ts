@@ -5,6 +5,7 @@ import { ButtonComponent } from "../../controles/button/button.component";
 import { GridComponent } from "../../controles/grid/grid.component";
 import { FormAdicionarClienteComponent } from "../../forms/adicionar.cliente/form.adicionar.cliente.component";
 import { ClienteModel } from "../../../../models/api/cliente/cliente.model";
+import { useClienteService } from "../../../../services/app/cliente.service";
 
 @Component({
   selector: 'drawer-adicionar-cliente-component',
@@ -24,9 +25,11 @@ export class DrawerAdicionarClienteComponent {
 
   formRef?: FormAdicionarClienteComponent;
 
-  handleSubmit = (model: ClienteModel) => {
-    console.log('SUBMIT NO PAI:', model);
-    // Aqui entraria sua chamada de API
+  handleSubmit = async (model: ClienteModel) => {
+    const { adicionarCliente } = useClienteService();
+
+    await adicionarCliente(model);
+    return;
   };
 
   setFormRef(ref: FormAdicionarClienteComponent) {

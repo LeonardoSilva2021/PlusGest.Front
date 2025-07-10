@@ -3,6 +3,10 @@
     padding-top: 8px;
 }
 
+.fileInput {
+    display: none;
+}
+
 /* AVATAR */
 .avatar {
     height: 130px !important;

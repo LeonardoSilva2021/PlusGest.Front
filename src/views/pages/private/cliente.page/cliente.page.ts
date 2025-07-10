@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { Component, effect, signal } from "@angular/core";
 import { HeaderPageComponent } from "../header.page/header.page.component";
 import { CardClienteComponent } from "../../../components/cards/card.cliente.component/card.cliente.component";
 import { PaginatorModule } from "primeng/paginator";
@@ -7,6 +7,9 @@ import { ButtonComponent } from "../../../components/controles/button/button.com
 import { AddUserIconComponent } from "../../../components/icones/add.user.icon/add.user.icon.component";
 import { DrawerAdicionarClienteComponentProps } from "../../../components/drawer/adicionar.cliente/drawer.adicionar.cliente.component.props";
 import { DrawerAdicionarClienteComponent } from "../../../components/drawer/adicionar.cliente/drawer.adicionar.cliente.component";
+import { useStorage } from "../../../../services/app/storage";
+import { StorageEnum } from "../../../../models/enuns/app/storage/storage.enum";
+import { useClienteService } from "../../../../services/app/cliente.service";
 
 @Component({
     selector: 'cliente-page',
@@ -26,41 +29,16 @@ export class ClientePage {
 
     openDrawer = signal<boolean>(false);
 
-    clientes: Array<ClienteModel> = [
-        new ClienteModel(
-            '1',
-            'Sebastiana Rosângela da Cruz',
-            334627722,
-            99889399300,
-            '06052025',
-            8738668631,
-            'sebastiana-dacruz78@vipsaude.com.br',
-            56600976,
-            'Rua Severino Rodrigues, s/n',
-            'Vila Ferro Velho',
-            'PE',
-            'Entrou as 15 horas',
-            'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png'
-        ),
-        new ClienteModel(
-            '2',
-            'Enzo Heitor André Nascimento',
-            311952409,
-            67733674336,
-            '05041984',
-            83991335927,
-            'enzoheitornascimento@enable.com.br',
-            58434637,
-            'Rua Walmir Araújo Costa',
-            'Serrotão',
-            'PB',
-            'Entrou as 10 horas',
-            'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png',
-        ),
-    ];
-
     get arrayClientes(): ClienteModel[] {
-        return this.clientes;
+
+        const { getStorage } = useStorage();
+
+        const clientes = getStorage(StorageEnum.clientes) as ClienteModel[];
+
+        if (clientes.length === 0)
+            return [];
+
+        return [];
     }
 
     handleClick = () => {
